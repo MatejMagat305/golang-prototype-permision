@@ -1,9 +1,9 @@
 package main
 
 import (
-	"awesomeProject/permisions"
 	"fmt"
-	"fyne.io/fyne/v2/app"
+	"golang.org/x/mobile/app"
+	"github.com/MatejMagat305/golang-prototype-permision/permisions"
 )
 
 func bluetooth() {
