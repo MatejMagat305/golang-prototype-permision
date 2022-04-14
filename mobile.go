@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/mobile/app"
+	"fyne.io/fyne/v2/app"
 	"github.com/MatejMagat305/golang-prototype-permision/permisions"
 )
 
