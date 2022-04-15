@@ -18,16 +18,17 @@ func bluetooth() {
 	}
 	err = app.RunOnJVM(func(vm, env, ctx uintptr) error {
 
-		b, err0 := permisions.CheckPermission(vm, env, ctx, "WRITE_EXTERNAL_STORAGE")
+		b, err0 := permisions.IsPermision(vm, env, ctx, "WRITE_EXTERNAL_STORAGE")
 		if err0 != nil {
 			return err0
 		}
 		fmt.Println("bluetooth is granted? ", b)
 		if !b {
-			_, err0 = permisions.CheckOrRequestPermissionSuscess(vm, env, ctx, "WRITE_EXTERNAL_STORAGE")
+			bb, err0 = permisions.RequestPermision(vm, env, ctx, "WRITE_EXTERNAL_STORAGE")
 			if err0 != nil {
 				return err0
 			}
+		        fmt.Println("bluetooth is granted? ", bb)
 		}
 		return nil
 	})
