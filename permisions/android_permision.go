@@ -22,7 +22,7 @@ var (
 	wasInit = false
 )
 
-func CheckOrRequestPermissionSuscess(vm, env, ctx uintptr, permName string) (bool, error) {
+func RequestPermision(vm, env, ctx uintptr, permName string) (bool, error) {
 	fmt.Println("CheckOrRequestPermissionSuscess")
 	if !wasInit {
 		return false, fmt.Errorf("it was not initialization")
@@ -39,7 +39,7 @@ func CheckOrRequestPermissionSuscess(vm, env, ctx uintptr, permName string) (boo
 	return bool(C.android_has_permission(envP, ctxP, cPermName)), nil
 }
 
-func CheckPermission(vm, env, ctx uintptr, permName string) (bool, error) {
+func IsPermision(vm, env, ctx uintptr, permName string) (bool, error) {
 	fmt.Println("CheckPermission")
 	if !wasInit {
 		return false, fmt.Errorf("it was not initialization")
