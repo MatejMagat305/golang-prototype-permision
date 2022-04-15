@@ -6,11 +6,11 @@ import (
 	"fmt"
 )
 
-func CheckOrRequestPermissionSuscess(vm, env, ctx uintptr, permName string) (bool, error) {
+func RequestPermision(vm, env, ctx uintptr, permName string) (bool, error) {
 	return false, fmt.Errorf("not implemented")
 }
 
-func CheckPermission(vm, env, ctx uintptr, permName string) (bool, error) {
+func IsPermision(vm, env, ctx uintptr, permName string) (bool, error) {
 	return false, fmt.Errorf("not implemented")
 }
 
