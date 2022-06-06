@@ -16,6 +16,7 @@ import "C"
 import (
 	"fmt"
 	"unsafe"
+	_ "unsafe"
 )
 
 var (
