@@ -56,7 +56,7 @@ func RequestPermision(permName string) (b bool, e error) {
 		fmt.Println("CheckOrRequestPermissionSuscess")
 		if !wasInit {
 			b, e = false, fmt.Errorf("it was not initialization")
-			return e
+			return 
 		}
 		cPermName := C.CString(permName)
 		defer C.free(unsafe.Pointer(cPermName))
@@ -68,6 +68,6 @@ func RequestPermision(permName string) (b bool, e error) {
 			C.android_request_permissions(envP, ctxP, cPermName)
 		}
 		b, e = bool(C.android_has_permission(envP, ctxP, cPermName)), nil
-		return nil
+		return 
 	})
 }
